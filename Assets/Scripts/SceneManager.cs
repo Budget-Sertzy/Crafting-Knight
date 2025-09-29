@@ -16,7 +16,19 @@ public class SceneController : MonoBehaviour
             Destroy(gameObject); // prevent duplicates
         }
     }
-
+       // Call this to quit the game at runtime
+    public void ExitGame()
+    {
+        // Only works in the built game
+        if (Application.isPlaying && !Application.isEditor)
+        {
+            Application.Quit();
+        }
+        else
+        {
+            Debug.Log("ExitGame called, but ignored in Editor.");
+        }
+    }
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
