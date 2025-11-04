@@ -11,9 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: bb10a26d62085f148b37c88282686f08
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: f220ab499e7e26e419c79b5cedc9a9f1
+  - enabled: 1
+    path: Assets/Scenes/Merch.unity
+    guid: 5842978a797bfec439af52b1bdc832fb
+  - enabled: 1
+    path: Assets/Scenes/FinalBoss.unity
+    guid: 466f91e9561947445b4a75eee8273226
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
