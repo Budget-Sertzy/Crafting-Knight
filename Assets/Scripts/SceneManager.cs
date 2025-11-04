@@ -8,6 +8,13 @@ public class SceneController : MonoBehaviour
     [Header("Scene Management")]
     public string CurrentScene;
 
+    public string Scene1;
+    public string Scene2;
+    public string Final;
+    public string Merchant;
+    
+   
+
     [Header("References")]
     public GameSettings gameSettings; // assign your ScriptableObject here
 
@@ -31,6 +38,26 @@ public class SceneController : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+        
+        /*
+         * Switching between scenes for project
+         */
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            LoadScene(Scene1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            LoadScene(Scene2);
+        }
+        else if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            LoadScene(Final);
+        }
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+            SceneManager.LoadScene(Merchant);
         }
     }
 
