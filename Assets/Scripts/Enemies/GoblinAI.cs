@@ -5,8 +5,10 @@ public class GoblinAI : EnemeyAI
 {
 
     [SerializeField] private float sightRange;
+    
     private bool playerInSight;
 
+    [SerializeField] private Animator moving;
 
     protected override void Update()
     {
@@ -14,11 +16,13 @@ public class GoblinAI : EnemeyAI
 
         if (!playerInSight)
         {
+            moving.SetBool("Moving" , false);
             Patrol();
         }
 
         if (playerInSight)
         {
+            moving.SetBool("Moving" , true);
             Chase();
         }
         

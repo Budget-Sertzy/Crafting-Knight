@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float drag;
 
     public Transform orientation;
+    public Transform sprite;
 
     private float horizontalInput;
     private float verticalInput;
@@ -15,11 +16,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection;
 
     private Rigidbody rb;
-
+    
+   
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        
         
     }
 
@@ -30,12 +33,16 @@ public class PlayerMovement : MonoBehaviour
         SpeedControl();
 
         rb.linearDamping = drag;
+        
+        
     }
 
     private void UserInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        
+        
     }
 
     void MovePlayer()
@@ -56,4 +63,6 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector3(limitedVel.x, rb.linearVelocity.y, limitedVel.z);
         }
     }
+
+   
 }
