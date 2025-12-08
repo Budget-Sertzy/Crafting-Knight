@@ -324,6 +324,10 @@ PrefabInstance:
       propertyPath: startTime
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4945968747085988271, guid: 4f73ae5501853a64694e799666c79ac0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1920910064, guid: 248926df7f87b374a91b869020588647, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
