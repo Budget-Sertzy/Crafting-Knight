@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float drag;
 
     public Transform orientation;
-
+    public Transform cam;
     private float horizontalInput;
     private float verticalInput;
 
@@ -30,16 +30,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        UserInput();
-        MovePlayer();
-        SpeedControl();
+     // Align orientation with camera (yaw only)
+    Vector3 camForward = cam.forward;
+    camForward.y = 0f;
+    camForward.Normalize();
+    orientation.forward = camForward;
 
-        rb.linearDamping = drag;
-        
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            heal.Heal(20);
-        }
+    UserInput();
+    MovePlayer();
+    SpeedControl();
+
+    rb.linearDamping = drag;
+
+    if (Input.GetKeyDown(KeyCode.Alpha2))
+    {
+        heal.Heal(20);
+    }
     }
 
     private void UserInput()
@@ -69,5 +75,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    
+    public void SetCamera(Transform newCam)
+{
+    cam = newCam;
+}
+
 }

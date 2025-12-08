@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
         
         this.health -= amount;
         HealthBar.SetHealth(health);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.hitSFX);
 
         if (health < -0)
         {
@@ -63,7 +64,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void die()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.gameoverSFX);
         Destroy(gameObject);
+        
         Debug.Log("This Object as died");
     }
 
