@@ -696,8 +696,8 @@ MonoBehaviour:
   sfxSource: {fileID: 194353527}
   backgroundMusic: {fileID: 8300000, guid: e3db2b60062a44fe38b34beaf9a705b2, type: 3}
   musicVolume: 0.5
-  sfxVolume: 1
-  swordSFX: {fileID: 8300000, guid: 121e76354dfbb4fa4ba32f2e5099426a, type: 3}
+  sfxVolume: 0.501
+  swordSFX: {fileID: 8300000, guid: b9e06cd68fc46470e81628bcc92f0b73, type: 3}
   hitSFX: {fileID: 8300000, guid: c6a648aa95a4c476aa5e219c3e47154a, type: 3}
   shootSFX: {fileID: 8300000, guid: 9ae1093280a5247f599235925a924971, type: 3}
   gameoverSFX: {fileID: 8300000, guid: 2a9f471113af540af9da31cf0dfc4da3, type: 3}

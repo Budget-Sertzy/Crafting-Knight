@@ -20,6 +20,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.swordSFX);
             Attack();
         }
 
@@ -42,6 +43,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
+                    
         attacking = true;
         attackArea.SetActive(attacking);
     }
