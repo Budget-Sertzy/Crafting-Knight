@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public float drag;
 
     public Transform orientation;
-    public Transform sprite;
 
     private float horizontalInput;
     private float verticalInput;
@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
 
-    public Health heal;
+    public PlayerHealth heal;
     
    
     private void Start()
@@ -69,5 +69,5 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-   
+    
 }

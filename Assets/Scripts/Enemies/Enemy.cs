@@ -23,9 +23,10 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (other.GetComponent<Health>() != null)
+            if (other.GetComponent<PlayerHealth>() != null)
             {
-                other.GetComponent<Health>().Damage(damage);
+                other.GetComponent<PlayerHealth>().Damage(damage);
+                Debug.Log("Hit");
             }
         }
     }

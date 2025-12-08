@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
 
@@ -9,8 +10,13 @@ public class TimerController : MonoBehaviour
     private float currentTime;
     public TextMeshProUGUI timerText; // Reference to your TextMeshPro text
     
+    public GameObject Enemies;
+    public GameObject boss;
+
+    private bool hasSpawned = false;
 
     private bool timerActive = false;
+    
 
     void Start()
     {
@@ -37,10 +43,20 @@ public class TimerController : MonoBehaviour
                 
             }
         }
-        else
+        if (!timerActive)
         {
             timerText.text = ("Boss Time");
+            Enemies.SetActive(false);
+
+            if (!hasSpawned)
+            {
+                boss.SetActive(true);
+                hasSpawned = true;
+            }
+
         }
+
+        
         
     }
 
@@ -60,4 +76,8 @@ public class TimerController : MonoBehaviour
         timerText.gameObject.SetActive(true); 
         
     }
+    
+    
+
+   
 }
