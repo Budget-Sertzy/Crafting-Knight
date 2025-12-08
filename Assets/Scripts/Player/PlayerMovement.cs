@@ -75,5 +75,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    
+    public void SetCamera(Transform newCam)
+{
+    cam = newCam;
+}
+
 }

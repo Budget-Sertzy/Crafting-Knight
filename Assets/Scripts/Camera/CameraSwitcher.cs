@@ -3,26 +3,43 @@ using UnityEngine;
 
 public class CameraSwitcher : MonoBehaviour
 {
-    public CinemachineCamera camera1;
-    public Camera camera2;
-    
+    public Camera thirdPersonCam;
+    public Camera firstPersonCam;
+    public PlayerMovement player;
+
+    private bool isFirstPerson = false;
+
     void Start()
     {
-        camera1.enabled = true;
-        camera2.enabled = false;
+        SetThirdPerson();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C)) // Press 'C' to switch
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            SwitchCameras();
+            if (isFirstPerson)
+                SetThirdPerson();
+            else
+                SetFirstPerson();
         }
     }
 
-    void SwitchCameras()
+    void SetFirstPerson()
     {
-        camera1.enabled = !camera1.enabled;
-        camera2.enabled = !camera2.enabled;
+        thirdPersonCam.enabled = false;
+        firstPersonCam.enabled = true;
+
+        player.SetCamera(firstPersonCam.transform);
+        isFirstPerson = true;
+    }
+
+    void SetThirdPerson()
+    {
+        firstPersonCam.enabled = false;
+        thirdPersonCam.enabled = true;
+
+        player.SetCamera(thirdPersonCam.transform);
+        isFirstPerson = false;
     }
 }
