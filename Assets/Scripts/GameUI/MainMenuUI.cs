@@ -73,8 +73,21 @@ public class MainMenuSettingsUI : MonoBehaviour
 
     private void OnBackClicked()
     {
-        settingsPanel.SetActive(false);
-        mainPanel.SetActive(true);
+          if (Settings != null)
+    {
+        // ⬅️ Revert to last saved values (what Apply previously wrote)
+        Settings.LoadSettings();   // read from PlayerPrefs
+        Settings.ApplySettings();  // apply to audio, resolution, etc.
+        SyncUIFromSettings();      // make sliders/toggles match again
+    }
+    else
+    {
+        Debug.LogWarning("MainMenuSettingsUI: No GameSettings when going back.");
+    }
+
+    // Now close panel
+    settingsPanel.SetActive(false);
+    mainPanel.SetActive(true);
     }
 
     private void OnApplyClicked()
