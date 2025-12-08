@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection;
 
     private Rigidbody rb;
+
+    public Health heal;
     
    
     private void Start()
@@ -34,7 +36,10 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearDamping = drag;
         
-        
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            heal.Heal(20);
+        }
     }
 
     private void UserInput()

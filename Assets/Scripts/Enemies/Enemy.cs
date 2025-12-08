@@ -11,17 +11,14 @@ public class Enemy : MonoBehaviour
 
     private GameObject player;
 
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         SetValues();
     }
 
-    private void Update()
-    {
-        
-    }
-
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

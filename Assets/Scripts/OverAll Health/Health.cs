@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
-    [SerializeField] private int gold = 0;
 
     [SerializeField] GameObject currentGameObject = default;
 

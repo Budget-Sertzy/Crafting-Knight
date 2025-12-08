@@ -23,6 +23,8 @@ public class PlayerAttack : MonoBehaviour
             Attack();
         }
 
+      
+
         if (attacking)
         {
             timer += Time.deltaTime;
